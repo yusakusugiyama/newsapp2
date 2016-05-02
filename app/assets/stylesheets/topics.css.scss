@@ -1,3 +1,37 @@
-// Place all the styles related to the topics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*リセット*/
+h1,h2,h3,h4{font-weight:normal;
+            text-decoration:none;
+            }
+body        {margin: 0px;
+             text-align:center;}
+a           {text-decoration:none;}
+
+
+div#grobal  {width:100%;}
+div#inner_grobal  {width:100%;
+                   padding: 0;
+                   box-sizing:border-box;
+                   text-align:left;}
+
+div.left      {width:50%;
+               padding: 0 3% 0 6%;
+               box-sizing:border-box;
+               float:left;}
+div.right     {width:50%;
+               padding: 0 6% 0 3%;
+               box-sizing:border-box;
+               float:left;}
+
+h2.genre_head {text-align:center;
+               font-size:14px;}
+
+div.topic_box {width: 100%;
+               padding: 8px;
+               border-bottom: 3px solid #cccccc;
+               margin-bottom:12px;
+               background-color:#ffffff;
+               box-sizing:border-box;}
+
+.topic_box h3.title {font-size:32px;
+                     font-style:oblique;
+                  }

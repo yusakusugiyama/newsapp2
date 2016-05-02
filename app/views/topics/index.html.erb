@@ -1,24 +1,34 @@
-    <div id="contents">
-      <div class="left">
-        <p>プログラミングニュース記事</p>
-        <% @topics.each do |topic| %>
-          <% if topic.genre == "programming" %>
-            <%= link_to href="/topics/#{topic.id}"><%= topic.title %>
-              <%= topic.genre %>
-              <%= topic.text %>
+    <div id="grobal">
+      <div id="inner_grobal">
+        <div class="left">
+          <h2 class="genre_head">プログラミングニュース記事</h2>
+          <% @topics.each do |topic| %>
+
+            <% if topic.genre == "programming" %>
+              <div class="topic_box">
+                <a href="/topics/<%= topic.id %>" alt="<%= topic.title %>">
+                  <h3 class="title"><%= topic.title %></h3>
+                  <p class="genre"><%= topic.genre %></p>
+                  <p class="text"><%= topic.text %></p>
+                  </a>
+              </div>
             <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
 
-      <div class="right">
-        <p>アディクションニュース記事</p>
-        <% @topics.each do |topic| %>
-          <% if topic.genre == "addiction" %>
-            <%= topic.title %>
-            <%= topic.genre %>
-            <%= topic.text %>
+        <div class="right">
+          <h2 class="genre_head">アディクションニュース記事</h2>
+          <% @topics.each do |topic| %>
+            <% if topic.genre == "addiction" %>
+              <div class="topic_box">
+                <a href="/topics/<%= topic.id %>" alt="<%= topic.title %>">
+                  <h3 class="title"><%= topic.title %></h3>
+                  <p class="genre"><%= topic.genre %></p>
+                  <p class="text"><%= topic.text %></p>
+                  </a>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
