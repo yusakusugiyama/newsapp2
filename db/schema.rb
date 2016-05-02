@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160502082529) do
   create_table "topics", force: :cascade do |t|
     t.text     "title",      limit: 65535
     t.text     "text",       limit: 65535
-    t.string   "jenre",      limit: 255
+    t.string   "genre",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

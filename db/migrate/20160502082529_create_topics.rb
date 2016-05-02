@@ -3,7 +3,7 @@ class CreateTopics < ActiveRecord::Migration
     create_table :topics do |t|
       t.text :title
       t.text :text
-      t.string :jenre
+      t.string :genre
 
       t.timestamps
     end

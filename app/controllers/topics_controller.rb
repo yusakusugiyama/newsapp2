@@ -1,8 +1,7 @@
 class TopicsController < ApplicationController
 
   def index
-    topic = Topic.all
-    
+    @topics = Topic.all
 
   end
 

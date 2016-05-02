@@ -1,8 +1,23 @@
     <div id="contents">
       <div class="left">
         <p>プログラミングニュース記事</p>
+        <% @topics.each do |topic| %>
+          <% if topic.genre == "programming" %>
+            <%= topic.title %>
+            <%= topic.genre %>
+            <%= topic.text %>
+          <% end %>
+        <% end %>
       </div>
+
       <div class="right">
         <p>アディクションニュース記事</p>
+        <% @topics.each do |topic| %>
+          <% if topic.genre == "addiction" %>
+            <%= topic.title %>
+            <%= topic.genre %>
+            <%= topic.text %>
+          <% end %>
+        <% end %>
       </div>
     </div>
