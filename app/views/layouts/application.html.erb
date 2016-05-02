@@ -3,26 +3,26 @@
 <head>
 <title>Newsapp2</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
   <header>
-    <h1><a href="/">Title</a></h1>
-
-    <div id="menu">
-      <ul>
-        <li>プログラミングニュース</li>
-        <li>アディクションニュース</li>
-      </ul>
+    <div id="header_inner">
+    <h1 class="app_title"><a href="/"><span style="font-size:12px;">日刊</span> 特注新聞</a></h1>
+      <hr class="dotted">
+      <p>プログラミング関連ニュースと依存症関連ニュース<br>だけをまとめてくれる、<br>
+      私にしか需要のない特注の新聞アプリケーションです。<br>
+      ただでさえニッチな新聞ですが、<br>好きな記事を切り抜いて、<br>特注の特注新聞を作ることもできます!</p>
+      <hr class="dotted">
     </div>
-
-
-
   </header>
 
   <%= yield %>
+
+  <hr class="dotted">
 
 </body>
 </html>

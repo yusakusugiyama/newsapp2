@@ -1,17 +1,38 @@
 /*リセット*/
 h1,h2,h3,h4{font-weight:normal;
             text-decoration:none;
-            }
+            margin: 0;
+            color:#333333;}
 body        {margin: 0px;
-             text-align:center;}
+             text-align:center;
+             color:#333333;
+             line-height:1.5;}
+
+/*レイアウト*/
 a           {text-decoration:none;}
 
+hr.dotted   {display: block;
+            width: 100%;
+            margin: 40px 0;
+            border: none;
+            border-top: 1px dotted #333;
+            }
 
+span.big_arrow {font-size:60px;
+                color:#e6e6e6;}
+
+
+/*共通デザイン部分*/
+div#header_inner  {width:88%;
+                   margin: 0 auto;}
+
+
+/*コンテンツ部分*/
 div#grobal  {width:100%;}
 div#inner_grobal  {width:100%;
                    padding: 0;
                    box-sizing:border-box;
-                   text-align:left;}
+                   text-align:center;}
 
 div.left      {width:50%;
                padding: 0 3% 0 6%;
@@ -22,12 +43,28 @@ div.right     {width:50%;
                box-sizing:border-box;
                float:left;}
 
+h1.app_title {
+              font-size:40px;
+              margin:40px;
+              font-style: oblique;
+              & a{color:#ce3e3e;}
+              }
+
 h2.genre_head {text-align:center;
                font-size:14px;}
 
 div.topic_box {width: 100%;
+               padding: 12px 0;
+               border-bottom: 3px solid #e6e6e6;
+               margin-bottom:12px;
+               background-color:#ffffff;
+               box-sizing:border-box;}
+
+div.topic_box a {color:#333333;}
+
+div.topic_box img {width: 100%;
                padding: 8px;
-               border-bottom: 3px solid #cccccc;
+               border: 20px solid #e6e6e6;
                margin-bottom:12px;
                background-color:#ffffff;
                box-sizing:border-box;}
