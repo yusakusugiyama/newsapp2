@@ -1,6 +1,6 @@
 class Scraping
 
-#yahooニュースのギャンブル依存症カテゴリをスクレイピング
+#ギャンブル依存症情報(yahooニュースカテゴリ)
   def self.addiction_topic_1
     agent = Mechanize.new
     links = []
@@ -25,7 +25,7 @@ class Scraping
   end
 
 #プログラミング情報(グノシーウェブカテゴリ)
-    def self.programming_topic_1
+  def self.programming_topic_1
     agent = Mechanize.new
     links = []
 
@@ -38,11 +38,11 @@ class Scraping
     links.each do |link|
       page = agent.get(link)
       title = page.at('h1.article_header_title').inner_text if page.at('h1.article_header_title')
-      text = page.at('p.ynDetailText').inner_text if page.at('p.ynDetailText')
-      image_url = page.at('.thumb a img').get_attribute('src') if page.at('.thumb a img')
+      text = page.at('div.article').inner_text if page.at('div.article')
+      image_url = page.at('div.article__image img').get_attribute('src') if page.at('div.article__image img')
 
       topic = Topic.where(title: title,text: text,image_url: image_url).first_or_initialize
-      topic.genre = "addiction"
+      topic.genre = "programming"
       topic.url = link
       topic.save
     end

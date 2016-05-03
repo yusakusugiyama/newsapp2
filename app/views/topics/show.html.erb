@@ -5,7 +5,7 @@
         <img src="<%= @topic.image_url %>" alt="<% @topic.title %>画像">
           <h3 class="title"><%= @topic.title %></h3></a>
           <p class="genre"><%= @topic.genre %></p>
-          <p class="text"><%= truncate(@topic.text, omission: '...', length: 50) %></p>
+          <p class="text"><%= truncate(@topic.text, omission: '...', length: 1000) %></p>
           
       </div>
     </div>
