@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503053834) do
+ActiveRecord::Schema.define(version: 20160503064118) do
 
   create_table "topics", force: :cascade do |t|
     t.text     "title",      limit: 65535
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160503053834) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "image_url",  limit: 65535
+    t.text     "url",        limit: 65535
   end
 
 end
