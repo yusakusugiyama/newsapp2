@@ -1,3 +1,4 @@
 class Like < ActiveRecord::Base
-  belogs_to :topic
+  belongs_to :topic
+  belongs_to :users
 end

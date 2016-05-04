@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  @nickname = current_user.nickname
 
-  #後でここをユーザーがライクしたもののみにする。
-  @topics =Topic.all
+  def show
+    @nickname = current_user.nickname
+
+    #後でここをユーザーがライクしたもののみにする。
+    @topics = Topic.all
+  end
+
 end

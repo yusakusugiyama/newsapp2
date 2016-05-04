@@ -12,10 +12,12 @@
   <header>
     <div header class="header_navi_user">
       <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path,method: :delete %>
+        <%= current_user.nickname %>
+        <a href="/users/<%= current_user.id %>">マイページ</a>
+          <%= link_to "ログアウト", destroy_user_session_path,method: :delete %>
       <% else %>
-        <%= link_to "ログイン",new_user_session_path %>
-        <%= link_to "新規登録",new_user_registration_path %>
+          <%= link_to "ログイン",new_user_session_path %>
+          <%= link_to "新規登録",new_user_registration_path %>
       <% end %>
     </div>
     <div id="header_navi">
