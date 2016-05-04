@@ -12,11 +12,11 @@
   <header>
     <div header class="header_navi_user">
       <% if user_signed_in? %>
-        <link_to "ログアウト", destroy_user_session_path,method: :delete %>
+        <%= link_to "ログアウト", destroy_user_session_path,method: :delete %>
       <% else %>
-        <% link_to "ログイン",new_user_session_path %>
-        <% link_to "新規登録",new_user_registration_path %>
-      <% end %>>
+        <%= link_to "ログイン",new_user_session_path %>
+        <%= link_to "新規登録",new_user_registration_path %>
+      <% end %>
     </div>
     <div id="header_navi">
       <h1 class="app_title"><a href="/"><span style="font-size:12px;">日刊</span> 特注新聞</a></h1>
