@@ -1,0 +1,7 @@
+<%= @nickname %>さんが切り抜いた投稿一覧<br>
+<br>
+<% @topics.each do |topic| %>
+  <%= topic.title %><br>
+  <%= topic.image_url %><br>
+  <%= topic.genre %><br>
+  <%= topic.text %><br>
