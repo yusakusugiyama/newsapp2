@@ -3,7 +3,7 @@ class LikesController < ApplicationController
 
 
   def create
-    Like.create(topic_id: params[:topic_id], user_id: current_user.id)
+    Like.create(topic_id: like_params[:topic_id], user_id: current_user.id)
     redirect_to controller: :topics, action: :index
   end
 
@@ -20,11 +20,11 @@ class LikesController < ApplicationController
     
   end
 
-  private
-    def tweet_params
-      params.permit(:topic_id)
-    end
 
+private
+  def like_params
+    params.permit(:topic_id)
+  end
 
 
 
