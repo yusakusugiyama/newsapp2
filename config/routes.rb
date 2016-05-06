@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root 'topics#index'
 
   resources :topics, :only => [:show,:index] do
-    resources :likes, only: [:create, :destroy]
+    resources :likes, :only => [:create,:destroy]
   end
 
+
   get 'users/:id' => 'users#show'
+
 
 end

@@ -13,6 +13,17 @@
                   <p class="genre"><%= topic.genre %></p>
                   <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
                   </a>
+                  <% if user_signed_in? %>
+                    <% if topic.like_user(current_user.id) %>
+                    
+                    <%= link_to "切り抜きの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", method: :delete %>
+                    
+
+                    <% else %>
+                    <%= button_to "like", topic_likes_path(user_id: current_user.id,topic_id:topic.id),method: :post%>
+                    <% end %>
+                  <% end %>
+
               </div>
             <% end %>
           <% end %>
@@ -30,15 +41,18 @@
                   <p class="genre"><%= topic.genre %></p>
                   <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
                   </a>
+                  <% if user_signed_in? %>
+                  <% if topic.like_user(current_user.id) %>
+                    
+                    <%= link_to "切り抜きの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", method: :delete %>
+
+                    <% else %>
+                    <%= button_to "like", topic_likes_path(user_id: current_user.id,topic_id:topic.id),method: :post%>
+                    <% end %>
+                  <% end %>
               </div>
             <% end %>
           <% end %>
         </div>
       </div>
-
-
-
-
-
-      
     </div>

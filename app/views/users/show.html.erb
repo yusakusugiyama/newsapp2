@@ -1,9 +1,40 @@
-<%= @nickname %>さんが切り抜いた投稿一覧<br>
+<%= current_user.nickname %>さんが切り抜いた記事一覧<br>
 <br>
-<% @topics.each do |topic| %>
-  <%= topic.title %><br>
-  <%= topic.image_url %><br>
 
-  <%= topic.genre %><br>
-  <%= topic.text %><br>
-<% end %>
+      <div id="inner_grobal" class="clearfix">
+        <div class="left">
+          <h2 class="genre_head">技術面</h2>
+          <span class="big_arrow">v</span>
+          <% @topics.each do |topic| %>
+
+            <% if topic.genre == "programming" %>
+              <div class="topic_box">
+                <a href="/topics/<%= topic.id %>" alt="<%= topic.title %>">
+                <img src="<%= topic.image_url %>" alt="<% topic.title %>画像">
+                  <h3 class="title"><%= topic.title %></h3>
+                  <p class="genre"><%= topic.genre %></p>
+                  <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
+                  </a>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="right">
+          <h2 class="genre_head">依存症面</h2>
+          <span class="big_arrow">v</span>
+          <% @topics.each do |topic| %>
+            <% if topic.genre == "addiction" %>
+              <div class="topic_box">
+                <a href="/topics/<%= topic.id %>" alt="<%= topic.title %>">
+                <img src="<%= topic.image_url %>" alt="<% topic.title %>画像">
+                  <h3 class="title"><%= topic.title %></h3>
+                  <p class="genre"><%= topic.genre %></p>
+                  <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
+                  </a>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
