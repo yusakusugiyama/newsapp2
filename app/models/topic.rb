@@ -5,7 +5,7 @@ class Topic < ActiveRecord::Base
    likes.find_by(user_id: user_id)
   end
 
-  def find_like_user(user_id)
-   likes.find_by(user_id: user_id)
-  end
+  
+
+
 end

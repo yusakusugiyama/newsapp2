@@ -16,12 +16,17 @@
                   <% if user_signed_in? %>
                     <% if topic.like_user(current_user.id) %>
                     
-                    <%= link_to "切り抜きの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", method: :delete %>
+                    <%= link_to "- Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
                     
 
                     <% else %>
-                    <%= button_to "like", topic_likes_path(user_id: current_user.id,topic_id:topic.id),method: :post%>
+                    <%= link_to "+ Like", topic_likes_path(user_id: current_user.id,topic_id:topic.id), class:'like_button', method: :post%>
                     <% end %>
+
+                  <% elsif %>
+                    <%= link_to "ログイン",new_user_session_path, class:'button_user' %> または 
+                    <%= link_to "新規登録",new_user_registration_path, class:'button_user' %>
+                    で記事を切り抜くことができます。
                   <% end %>
 
               </div>
@@ -43,13 +48,15 @@
                   </a>
                   <% if user_signed_in? %>
                   <% if topic.like_user(current_user.id) %>
-                    
-                    <%= link_to "切り抜きの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", method: :delete %>
+                    <%= link_to "- Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class:'like_button', method: :delete %>
 
-                    <% else %>
-                    <%= button_to "like", topic_likes_path(user_id: current_user.id,topic_id:topic.id),method: :post%>
-                    <% end %>
+
+                  <% else %>
+                    <%= link_to "+ Kirinuki", topic_likes_path(user_id: current_user.id,topic_id:topic.id),  class:'like_button',method: :post%>
                   <% end %>
+                <% elsif %>
+
+                <% end %>
               </div>
             <% end %>
           <% end %>

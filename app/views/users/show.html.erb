@@ -15,6 +15,7 @@
                   <p class="genre"><%= topic.genre %></p>
                   <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
                   </a>
+                  <%= link_to "Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
               </div>
             <% end %>
           <% end %>
@@ -32,6 +33,7 @@
                   <p class="genre"><%= topic.genre %></p>
                   <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
                   </a>
+                  <%= link_to "Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
               </div>
             <% end %>
           <% end %>

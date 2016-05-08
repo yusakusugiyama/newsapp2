@@ -1,22 +1,20 @@
-# config/schedule.rb
-# コマンドの出力先を設定（デフォルトはなし）
-set :output, "#{path}/log/cron.log"
+# Use this file to easily define all of your cron jobs.
+#
+# It's helpful, but not entirely necessary to understand cron before proceeding.
+# http://en.wikipedia.org/wiki/Cron
 
-# コマンドを実行するシェルを設定する（デフォルトはbash -l -c ':job'）
-# set :job_template, "zsh ':job'"
+# Example:
+#
+##set :output, '/home/yusakusugiyama/projects/whenever_sample/log/cron.log' 
+#
+# every 2.hours do
+#   command "/usr/bin/some_great_command"
+#   runner "MyModel.some_method"
+#   rake "some:great:rake:task"
+# end
+#
+##every :hour do
+##   runner "Scraping.addiction_topic_1"
+##end
 
-# RAILS_ENVを設定する（デフォルトはproduction）
-# set :environment, "development"
-
-
-# 毎日の午前1時30分に実行する
-every 1.day, at: '1:30 am' do
-  command "/usr/bin/some_great_command"
-  runner "MyModel.some_method"
-  rake "some:great:rake:task"
-end
-
-# 毎日曜日の昼の12時に実行する
-every :sunday, at: '12pm' do
-  runner "AnotherModel.prune_old_records"
-end
+# Learn more: http://github.com/javan/whenever

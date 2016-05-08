@@ -13,7 +13,7 @@ class LikesController < ApplicationController
     if like.user_id == current_user.id
       like.destroy
     end
-    redirect_to controller: :topics, action: :index
+    redirect_to controller: :users, action: :show
   end
 
   def new
