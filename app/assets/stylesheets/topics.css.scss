@@ -90,7 +90,9 @@ div#header_navi_menu a.like_button {background-color:#E2B7B0;}
 div#inner_88box  {width:88%;
                    margin: 0 auto;}
 
-div#footer       {padding:40px 0;
+div#footer       {
+                  bottom: 0;
+                  padding:40px 0;
                   background-color:#231F20;
                   color:#ffffff;}
 
