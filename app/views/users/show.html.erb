@@ -22,7 +22,7 @@
                   </a>
                   <a class="url">記事全文</a>
 
-                  <%= link_to "Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
+                    <%= link_to "- Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
               </div>
             <% end %>
           <% end %>
