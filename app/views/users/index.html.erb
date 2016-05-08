@@ -1,4 +1,12 @@
-<% @users.each |user| do %>
-  user.name
-
-<% end %>
+    <div id="grobal">
+      <div id="inner_grobal" class="clearfix">
+        <div id="inner_88box">
+          <hr class="dotted">
+          <h1 class="pagetitle">ユーザー一覧</h1>
+          <hr class="dotted">
+          <% @users.each do |user| %>
+          <p><%= user.nickname %></p>
+        <% end %>
+        </div>
+      </div>
+    </div>

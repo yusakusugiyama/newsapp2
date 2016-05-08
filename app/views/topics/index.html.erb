@@ -1,65 +1,101 @@
     <div id="grobal">
       <div id="inner_grobal" class="clearfix">
+        <div id="inner_88box">
+          <hr class="dotted">
+          <h1 class="pagetitle">新着記事一覧</h1>
+          
+          <hr class="dotted">
+        </div>
+
+
+
         <div class="left">
           <h2 class="genre_head">技術面</h2>
           <span class="big_arrow">v</span>
-          <% @topics.each do |topic| %>
 
-            <% if topic.genre == "programming" %>
+
+
+          <% @topics_p2.each do |topic| %>
+            <% if topic.genre == "programming2" %>
               <div class="topic_box">
                 <a href="/topics/<%= topic.id %>" alt="<%= topic.title %>">
                 <img src="<%= topic.image_url %>" alt="<% topic.title %>画像">
-                  <h3 class="title"><%= topic.title %></h3>
-                  <p class="genre"><%= topic.genre %></p>
+                <h3><p class="title"><%= topic.title %></p></h3>
                   <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
                   </a>
+                  <a class="url" href="<%= topic.url %>">記事全文</a>
                   <% if user_signed_in? %>
                     <% if topic.like_user(current_user.id) %>
-                    
                     <%= link_to "- Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
-                    
-
                     <% else %>
                     <%= link_to "+ Like", topic_likes_path(user_id: current_user.id,topic_id:topic.id), class:'like_button', method: :post%>
                     <% end %>
-
                   <% elsif %>
                     <%= link_to "ログイン",new_user_session_path, class:'button_user' %> または 
                     <%= link_to "新規登録",new_user_registration_path, class:'button_user' %>
                     で記事を切り抜くことができます。
                   <% end %>
-
               </div>
             <% end %>
           <% end %>
+
+
+
+          <% @topics_p1.each do |topic| %>
+            <% if topic.genre == "programming" %>
+              <div class="topic_box">
+                <a href="/topics/<%= topic.id %>" alt="<%= topic.title %>">
+                <img src="<%= topic.image_url %>" alt="<% topic.title %>画像">
+                <h3><p class="title"><%= topic.title %></p></h3>
+                  <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
+                  </a>
+                  <a class="url" href="<%= topic.url %>">記事全文</a>
+                  <% if user_signed_in? %>
+                    <% if topic.like_user(current_user.id) %>
+                      <%= link_to "- Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
+                    <% else %>
+                    <%= link_to "+ Like", topic_likes_path(user_id: current_user.id,topic_id:topic.id), class:'like_button', method: :post%>
+                    <% end %>
+                  <% elsif %>
+                    <%= link_to "ログイン",new_user_session_path, class:'button_user' %> または 
+                    <%= link_to "新規登録",new_user_registration_path, class:'button_user' %>
+                    で記事を切り抜くことができます。
+                  <% end %>
+              </div>
+            <% end %>
+          <% end %>
+
+
+
+
+
         </div>
 
         <div class="right">
           <h2 class="genre_head">依存症面</h2>
           <span class="big_arrow">v</span>
-          <% @topics.each do |topic| %>
+          <% @topics_a1.each do |topic| %>
             <% if topic.genre == "addiction" %>
               <div class="topic_box">
                 <a href="/topics/<%= topic.id %>" alt="<%= topic.title %>">
                 <img src="<%= topic.image_url %>" alt="<% topic.title %>画像">
-                  <h3 class="title"><%= topic.title %></h3>
-                  <p class="genre"><%= topic.genre %></p>
+                <h3><p class="title"><%= topic.title %></p></h3>
                   <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
                   </a>
+                  <a class="url" href="<%= topic.url %>">記事全文</a>
                   <% if user_signed_in? %>
-                  <% if topic.like_user(current_user.id) %>
-                    <%= link_to "- Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class:'like_button', method: :delete %>
+                    <% if topic.like_user(current_user.id) %>
+                      <%= link_to "- Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class:'like_button', method: :delete %>
 
 
+                    <% else %>
+                      <%= link_to "+ Like", topic_likes_path(user_id: current_user.id,topic_id:topic.id),  class:'like_button',method: :post%>
+                    <% end %>
                   <% else %>
-                    <%= link_to "+ Kirinuki", topic_likes_path(user_id: current_user.id,topic_id:topic.id),  class:'like_button',method: :post%>
-                  <% end %>
-                <% elsif %>
 
-                <% end %>
-              </div>
+                  <% end %>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
-      </div>
-    </div>

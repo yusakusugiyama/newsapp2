@@ -1,11 +1,36 @@
-
-    <div id="inner_88box">
-      <div class="topic_box">
-        <a href="/topics/<%= @topic.id %>" alt="<%= @topic.title %>">
-        <img src="<%= @topic.image_url %>" alt="<% @topic.title %>画像">
-          <h3 class="title"><%= @topic.title %></h3></a>
-          <p class="genre"><%= @topic.genre %></p>
-          <p class="text"><%= truncate(@topic.text, omission: '...', length: 1000) %></p>
+    <div id="grobal">
+      <div id="inner_grobal" class="clearfix">
+        <div id="inner_88box">
+          <hr class="dotted">
+          <h1 class="pagetitle"><h1 class="title"><%= @topic.title %></h1></a></h1>
           
+          <hr class="dotted">
+
+
+          <div class="topic_box">
+            <a href="/topics/<%= @topic.id %>" alt="<%= @topic.title %>">
+            <img src="<%= @topic.image_url %>" alt="<% @topic.title %>画像">
+              
+              <p class="genre"><%= @topic.genre %></p>
+              <p class="text"><%= truncate(@topic.text, omission: '...', length: 1000) %></p>
+
+              <% if user_signed_in? %>
+                <% if @topic.like_user(current_user.id) %>
+                
+                  <%= link_to "- Likeの取り消し", "/topics/#{@topic.id}/likes/#{@topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
+                
+
+                <% else %>
+                  <%= link_to "+ Like", "/topics/#{@topic.id}/likes", class:'like_button', method: :post%>
+                <% end %>
+
+              <% else %>
+                <%= link_to "ログイン",new_user_session_path, class:'button_user' %> または 
+                <%= link_to "新規登録",new_user_registration_path, class:'button_user' %>
+                で記事を切り抜くことができます。
+              <% end %>
+              
+          </div>
+        </div>
       </div>
     </div>

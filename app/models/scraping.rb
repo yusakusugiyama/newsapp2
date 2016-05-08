@@ -48,6 +48,32 @@ class Scraping
     end
   end
 
+
+
+#プログラミング情報(The_bridge)
+  def self.programming_topic_2
+    agent = Mechanize.new
+    links = []
+
+    page = agent.get("http://thebridge.jp/news/?category=pickup")
+    elements = page.search('article h3 a')
+    elements.each do |ele|
+      links << ele.get_attribute('href')
+    end
+
+    links.each do |link|
+      page = agent.get(link)
+      title = page.at('h2').inner_text if page.at('h2')
+      text = page.at('div.body').inner_text if page.at('div.body')
+      image_url = page.at('div.body img').get_attribute('src') if page.at('div.body')
+
+      topic = Topic.where(title: title,text: text,image_url: image_url).first_or_initialize
+      topic.genre = "programming2"
+      topic.url = link
+      topic.save
+    end
+  end
+
 end
 
 

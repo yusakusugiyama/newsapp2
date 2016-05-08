@@ -1,7 +1,12 @@
-<%= current_user.nickname %>さんが切り抜いた記事一覧<br>
-<br>
-
+    <div id="grobal">
       <div id="inner_grobal" class="clearfix">
+        <div id="inner_88box">
+
+          <hr class="dotted">
+          <h1 class="pagetitle"><%= current_user.nickname %>さんがLikeした記事一覧</h1>
+          <hr class="dotted">
+        </div>
+
         <div class="left">
           <h2 class="genre_head">技術面</h2>
           <span class="big_arrow">v</span>
@@ -15,6 +20,8 @@
                   <p class="genre"><%= topic.genre %></p>
                   <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
                   </a>
+                  <a class="url">記事全文</a>
+
                   <%= link_to "Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
               </div>
             <% end %>
@@ -33,10 +40,11 @@
                   <p class="genre"><%= topic.genre %></p>
                   <p class="text"><%= truncate(topic.text, omission: '...', length: 50) %></p>
                   </a>
+                  <a class="url">記事全文</a>
                   <%= link_to "Likeの取り消し", "/topics/#{topic.id}/likes/#{topic.like_user(current_user).id}", class: 'like_button', method: :delete %>
               </div>
             <% end %>
           <% end %>
         </div>
       </div>
-
+    </div>

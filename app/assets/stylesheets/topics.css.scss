@@ -8,6 +8,9 @@ body        {margin: 0px;
              color:#333333;
              line-height:1.5;}
 
+p           {margin:0;
+             padding:0;}
+
 .clearfix:after{
                       content: "."; 
                       display: block; 
@@ -22,9 +25,11 @@ body        {margin: 0px;
 a           {text-decoration:none;
              font-style: italic;}
 
+
+
 hr.dotted   {display: block;
             width: 100%;
-            margin: 40px 0;
+            margin: 40px 0 ;
             border: none;
             border-top: 1px dotted #333;
             }
@@ -49,6 +54,8 @@ h1.app_title {float:left;
               font-family: 'Crimson Text', serif;
               }
 
+h1.page_title {ont-size:32px;}
+
 a.menu_button  {float:right;
                 display: block;
                 line-height: 60px;
@@ -66,7 +73,7 @@ div#header_navi_menu a{color:#ffffff;
                        float:right;
                        line-height:44px;
                        padding: 0 12px;
-                       margin-left: 12px;
+                       margin-left: 2px;
                        font-family: 'Oswald', sans-serif;
                        font-style: italic;
                        &.selected {background-color:#ffffff;
@@ -76,19 +83,23 @@ div#header_navi_menu a{color:#ffffff;
 
 
 div#header_navi_menu a.user_button {
-                      background-color:#B7ADAE;}
+                      background-color:#333333;}
+
+div#header_navi_menu a.like_button {background-color:#E2B7B0;}
 
 div#inner_88box  {width:88%;
                    margin: 0 auto;}
 
-div#footer{background-color:#b7adae;
-           color:#ffffff;}
+div#footer       {padding:40px 0;
+                  background-color:#231F20;
+                  color:#ffffff;}
 
 
 /*コンテンツ部分*/
-div#grobal  {width:100%;}
+div#grobal        {width:100%;
+                   margin: 40px 0 40px 0;}
+
 div#inner_grobal  {width:100%;
-                   padding: 0;
                    box-sizing:border-box;
                    text-align:center;}
 
@@ -111,23 +122,40 @@ div.topic_box {width: 100%;
                background-color:#ffffff;
                box-sizing:border-box;}
 
-div.topic_box a {color:#333333;}
+div.topic_box a {color:#0000ee;}
+
+div.topic_box a.url {font-size:12px;display:block;
+                     margin-bottom:12px;}
 
 div.topic_box img {width: 100%;
-               padding: 8px;
                border: 20px solid #e6e6e6;
                margin-bottom:12px;
                background-color:#ffffff;
                box-sizing:border-box;}
 
-.topic_box h3.title {font-size:32px;
+.topic_box p.title  {font-size:32px;
                      font-style:oblique;
-                  }
+                     margin-bottom:12px;}
+
+
+
+p.genre {color:#333333;}
+
+p.text {color:#333333;
+        margin-bottom:12px;}
 
 /*切り抜きボタン*/
-div.topic_box a.like_button        {background-color:#333333;
-                      color:#ffffff;
-                      padding:8px;
-                      display:block;
-                      margin:12px 0;
-                      }
+div.topic_box a.like_button        {border:solid 1px#E2B7B0;
+                                    color:#333333;
+                                    padding:8px;
+                                    display:block;
+                                    margin:12px 0;
+                                    font-family: 'Oswald', sans-serif;
+                                    }
+
+div.topic_box a.like_button:hover   {background-color:#E2B7B0;
+                                     color:#ffffff;}
+
+
+
+
